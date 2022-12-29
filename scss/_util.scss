@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+$font: "Kanit", sans-serif;
+$font2: "Roboto Condensed", sans-serif;
+$dark-color: rgba(18, 18, 20, 0.979);
+$back-color: rgb(240, 238, 238);
+$grey-color: rgba(128, 122, 122, 0.856);
+
+%header {
+  font-size: 1.8rem;
+  font-family: $font;
+  letter-spacing: -0.1px;
+}
+
+%image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 90%;
+}
+
+%icon {
+  min-width: 5rem;
+  min-height: 5rem;
+  padding: 1.2rem 1.2rem;
+  font-size: 2.8rem;
+  color: white;
+  background-color: rgba(245, 241, 241, 0.589);
+  border-radius: 4rem;
+  visibility: hidden;
+}
+
+%hover {
+  color: rgba(190, 188, 188, 0.87);
+  transform: translate(0, 0.2rem);
+  cursor: pointer;
+}
+
+%nav-buttons {
+  position: absolute;
+  top: 85%;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  font-size: 2rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: black;
+}
+
+@mixin nav-buttons {
+  @extend %nav-buttons;
+
+  &:hover {
+    background-color: $dark-color;
+    color: white;
+    cursor: pointer;
+  }
+
+  &:active {
+    @include transform(scale(0.95));
+  }
+}
+
+@mixin transition {
+  -webkit-transition: all 50ms ease 0s;
+  -moz-transition: all 50ms ease 0s;
+  -o-transition: all 50ms ease 0s;
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -o-transform: $property;
+}
+
+@mixin text-decoration-thickness($amount) {
+  -webkit-text-decoration-thickness: $amount;
+  -moz-text-decoration-thickness: $amount;
+  -o-text-decoration-thickness: $amount;
+}
